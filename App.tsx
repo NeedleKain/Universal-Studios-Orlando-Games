@@ -11,9 +11,9 @@ import { MinistryOfMagicGame } from './components/MinistryOfMagicGame';
 import { JurassicParkPowerGame } from './components/JurassicParkPowerGame';
 import { YoshiFruitFeastGame } from './components/YoshiFruitFeastGame';
 import { HagridMagicalCreatureGame } from './components/HagridMagicalCreatureGame';
-import { StarlightCatcherGame } from './components/StarlightCatcherGame';
 import { FastFuriousTakedownGame } from './components/FastFuriousTakedownGame';
 import { MIBCheckpointGame } from './components/MIBCheckpointGame';
+import { MonstersUnchainedGame } from './components/MonstersUnchainedGame';
 
 const App: React.FC = () => {
     const [selectedPark, setSelectedPark] = useState<Park | null>(null);
@@ -70,14 +70,14 @@ const App: React.FC = () => {
             if (selectedAttraction.name === "Hagrid’s Magical Creatures Motorbike Adventure™") {
                 return <HagridMagicalCreatureGame onBack={resetToAttractions} />;
             }
-            if (selectedAttraction.name === 'Stardust Racers') {
-                return <StarlightCatcherGame onBack={resetToAttractions} />;
-            }
             if (selectedAttraction.name === 'Fast & Furious – Supercharged') {
                 return <FastFuriousTakedownGame onBack={resetToAttractions} />;
             }
             if (selectedAttraction.name === 'MEN IN BLACK™ Alien Attack™') {
                 return <MIBCheckpointGame onBack={resetToAttractions} />;
+            }
+            if (selectedAttraction.name === 'Monsters Unchained: The Frankenstein Experiment') {
+                return <MonstersUnchainedGame onBack={resetToAttractions} />;
             }
             return <GamePlaceholder attraction={selectedAttraction} onBack={resetToAttractions} />;
         }

@@ -16,6 +16,15 @@ export const PARKS_DATA: Park[] = [
       },
       {
         name: 'New York',
+        themeColors: {
+          primary: '#334155',      // slate-700
+          secondary: '#fbbf24',    // amber-400 (Yellow Cab)
+          accent: '#38bdf8',       // sky-400 (Bright City Lights)
+          textPrimary: '#f1f5f9',    // slate-100
+          textSecondary: '#94a3b8',   // slate-400
+          background: '#0f172a',      // slate-900
+          cardBg: '#1e293b',       // slate-800
+        },
         attractions: [
             { name: 'Revenge of the Mummy' },
             { name: 'Race Through New York Starring Jimmy Fallon' },
