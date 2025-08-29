@@ -1,0 +1,6 @@
+{
+  "name": "Universal Queue Games",
+  "description": "An application that provides fun games to play while waiting in line at Universal theme parks. Select your park, area, and attraction to start playing.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
