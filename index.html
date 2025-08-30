@@ -3,11 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Universal Studios Orlando - Jeux de File d'Attente</title>
+    <title>Universal Queue Games</title>
+    <meta name="description" content="An application that provides fun games to play while waiting in line at Universal theme parks. Select your park, area, and attraction to start playing." />
+    <meta name="theme-color" content="#020617" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%230c4a6e'/%3E%3Cpath d='M50,5 A45,45 0 0,1 50,95' stroke='%23f59e0b' stroke-width='5' fill='none'/%3E%3Cpath d='M5,50 A45,45 0 0,1 95,50' stroke='%23f59e0b' stroke-width='5' fill='none'/%3E%3Cellipse cx='50' cy='50' rx='20' ry='45' stroke='%23f59e0b' stroke-width='5' fill='none'/%3E%3C/svg%3E" />
+    
+    <!-- Font optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
-      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
       :root {
         --color-primary: #0c4a6e;
         --color-secondary: #f59e0b;
@@ -47,6 +54,7 @@
 </script>
 </head>
   <body>
+    <noscript>Vous devez activer JavaScript pour utiliser cette application.</noscript>
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>
