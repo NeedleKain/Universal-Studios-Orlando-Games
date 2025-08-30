@@ -91,7 +91,7 @@ export const InvestigationGame: React.FC<InvestigationGameProps> = ({ onBack, ga
             
             if (data.newEvidence) {
                 const imageResponse = await ai.current.models.generateImages({
-                    model: 'imagen-3.0-generate-002',
+                    model: 'imagen-4.0-generate-001',
                     prompt: data.newEvidence.imagePrompt,
                     config: { numberOfImages: 1, outputMimeType: 'image/jpeg' }
                 });

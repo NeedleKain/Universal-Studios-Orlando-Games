@@ -89,7 +89,7 @@ export const AdventureGame: React.FC<AdventureGameProps> = ({
         }
 
         const imageResponse = await ai.current.models.generateImages({
-            model: 'imagen-3.0-generate-002',
+            model: 'imagen-4.0-generate-001',
             prompt: content.imagePrompt,
             config: { numberOfImages: 1, outputMimeType: 'image/jpeg', aspectRatio: '16:9' }
         });
@@ -162,7 +162,7 @@ export const AdventureGame: React.FC<AdventureGameProps> = ({
 
         try {
             const imageResponse = await ai.current.models.generateImages({
-                model: 'imagen-3.0-generate-002',
+                model: 'imagen-4.0-generate-001',
                 prompt: content.imagePrompt,
                 config: { numberOfImages: 1, outputMimeType: 'image/jpeg', aspectRatio: '16:9' }
             });

@@ -170,7 +170,7 @@ export const MIBCheckpointGame: React.FC<MIBCheckpointGameProps> = ({ onBack }) 
             const alienData = JSON.parse(dataResponse.text) as AlienData;
 
             const imageResponse = await ai.current.models.generateImages({
-                model: 'imagen-3.0-generate-002',
+                model: 'imagen-4.0-generate-001',
                 prompt: alienData.imagePrompt,
                 config: { numberOfImages: 1, outputMimeType: 'image/jpeg', aspectRatio: '1:1' }
             });
