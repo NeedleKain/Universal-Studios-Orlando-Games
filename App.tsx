@@ -14,6 +14,7 @@ import { HagridMagicalCreatureGame } from './components/HagridMagicalCreatureGam
 import { FastFuriousTakedownGame } from './components/FastFuriousTakedownGame';
 import { MIBCheckpointGame } from './components/MIBCheckpointGame';
 import { MonstersUnchainedGame } from './components/MonstersUnchainedGame';
+import { SpiderManHeadlineGame } from './components/SpiderManHeadlineGame';
 
 const App: React.FC = () => {
     const [selectedPark, setSelectedPark] = useState<Park | null>(null);
@@ -78,6 +79,9 @@ const App: React.FC = () => {
             }
             if (selectedAttraction.name === 'Monsters Unchained: The Frankenstein Experiment') {
                 return <MonstersUnchainedGame onBack={resetToAttractions} />;
+            }
+            if (selectedAttraction.name === 'The Amazing Adventures of Spider-Man®') {
+                return <SpiderManHeadlineGame onBack={resetToAttractions} />;
             }
             return <GamePlaceholder attraction={selectedAttraction} onBack={resetToAttractions} />;
         }

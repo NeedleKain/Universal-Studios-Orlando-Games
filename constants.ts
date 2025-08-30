@@ -106,6 +106,15 @@ export const PARKS_DATA: Park[] = [
       },
       {
         name: 'Marvel Super Hero Island®',
+        themeColors: {
+          primary: '#0369a1', // sky-700 (Spidey Blue)
+          secondary: '#dc2626', // red-600 (Spidey Red)
+          accent: '#facc15', // yellow-400 (Comic Accent)
+          textPrimary: '#f3f4f6', // gray-100
+          textSecondary: '#d1d5db', // gray-300
+          background: '#1f2937', // gray-800
+          cardBg: '#374151', // gray-700
+        },
         attractions: [
           { name: 'The Incredible Hulk Coaster®' },
           { name: 'The Amazing Adventures of Spider-Man®' },
