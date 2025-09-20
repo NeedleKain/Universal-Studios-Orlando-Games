@@ -12,7 +12,7 @@ interface GameItem {
   type: ItemType;
   x: number;
   y: number;
-  element: React.ReactNode;
+  ItemComponent: React.FC;
 }
 interface TongueState {
   isActive: boolean;
@@ -47,7 +47,7 @@ const ITEM_POINTS = {
   enemy_eaten: 30,
 };
 
-// SVG components for items
+// Item components
 const Apple = () => <div className="text-4xl">🍎</div>;
 const Banana = () => <div className="text-4xl">🍌</div>;
 const Melon = () => <div className="text-4xl">🍉</div>;
@@ -56,14 +56,14 @@ const PiranhaPlant = () => <div className="text-4xl">🌺</div>;
 const Clock = () => <div className="text-4xl">⏰</div>;
 const Star = () => <div className="text-4xl animate-pulse">🌟</div>;
 
-const itemElements: Record<ItemType, React.ReactNode> = {
-  apple: <Apple />,
-  banana: <Banana />,
-  melon: <Melon />,
-  shyguy: <ShyGuy />,
-  piranhaplant: <PiranhaPlant />,
-  clock: <Clock />,
-  star: <Star />,
+const itemComponentMap: Record<ItemType, React.FC> = {
+  apple: Apple,
+  banana: Banana,
+  melon: Melon,
+  shyguy: ShyGuy,
+  piranhaplant: PiranhaPlant,
+  clock: Clock,
+  star: Star,
 };
 
 export const YoshiFruitFeastGame: React.FC<YoshiFruitFeastGameProps> = ({ onBack }) => {
@@ -119,7 +119,7 @@ export const YoshiFruitFeastGame: React.FC<YoshiFruitFeastGameProps> = ({ onBack
       type: chosenType,
       x: Math.random() * (gameArea.width - 60) + 30,
       y: Math.random() * (gameArea.height - 100) + 30,
-      element: itemElements[chosenType],
+      ItemComponent: itemComponentMap[chosenType],
     };
 
     setItems(currentItems => [...currentItems, newItem]);
@@ -238,17 +238,20 @@ export const YoshiFruitFeastGame: React.FC<YoshiFruitFeastGameProps> = ({ onBack
             backgroundImage: "url('https://www.transparenttextures.com/patterns/stitched-wool.png')",
             backgroundBlendMode: 'overlay'
           }}>
-            {items.map(item => (
-                <div key={item.id}
-                     className="absolute transition-transform duration-200 hover:scale-125"
-                     style={{ left: item.x, top: item.y, transform: 'translate(-50%, -50%)' }}
-                     onClick={() => handleItemClick(item)}
-                     role="button"
-                     aria-label={`Attraper ${item.type}`}
-                >
-                    {item.element}
-                </div>
-            ))}
+            {items.map(item => {
+                const { ItemComponent } = item;
+                return (
+                    <div key={item.id}
+                         className="absolute transition-transform duration-200 hover:scale-125"
+                         style={{ left: item.x, top: item.y, transform: 'translate(-50%, -50%)' }}
+                         onClick={() => handleItemClick(item)}
+                         role="button"
+                         aria-label={`Attraper ${item.type}`}
+                    >
+                        <ItemComponent />
+                    </div>
+                );
+            })}
             <Yoshi />
             <Tongue />
             {isInvincible && <div className="absolute inset-0 bg-yellow-300 opacity-30 pointer-events-none animate-pulse"></div>}
